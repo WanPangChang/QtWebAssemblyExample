@@ -34,8 +34,17 @@ int main(int argc, char* argv[])
     auto loadContent = new QPushButton("Load Content", mainWidget);
     auto saveContent = new QPushButton("Save Content", mainWidget);
     
-    auto textContent = new QTextEdit(mainWidget);
-    textContent->setLineWrapMode(QTextEdit::NoWrap);
+    std::vector<QTextEdit*> textContents =
+    {
+        nullptr,
+        nullptr,
+    };
+    
+    for (auto&& textContent : textContents)
+    {
+        textContent = new QTextEdit(mainWidget);
+        textContent->setLineWrapMode(QTextEdit::NoWrap);
+    }
 
 #if 0
     auto db = QSqlDatabase::addDatabase("QODBC3");
@@ -54,13 +63,24 @@ int main(int argc, char* argv[])
 #endif
 
     {
-        auto downloader = new Downloader(mainWidget);
-        downloader->doDownload();
-        auto receData = [=]()
+        std::vector<QString> addresses =
         {
-            textContent->setText(downloader->getData());
+            "https://wanpangchang.github.io/QtWebAssemblyExample/WebTest/Demo.csv",
+            "https://dbhub.io/kcimg528/test.db",
         };
-        QObject::connect(downloader, &Downloader::receData, receData);
+        
+        for (size_t i = 0; i < textContents.size(); ++i)
+        {
+            auto&& address = addresses[i];
+            auto&& textContent = textContents[i];
+            auto downloader = new Downloader(mainWidget);
+            downloader->doDownload(address);
+            auto receData = [=]()
+            {
+                textContent->setText(downloader->getData());
+            };
+            QObject::connect(downloader, &Downloader::receData, receData);
+        }
     }
     
     {
@@ -76,7 +96,8 @@ int main(int argc, char* argv[])
                 contentSelected,
             },
             {
-                textContent,
+                textContents[0],
+                textContents[1],
             },
             {
 #if 0

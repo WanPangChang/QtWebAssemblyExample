@@ -19,7 +19,7 @@ const QString &Downloader::getData()
     return m_data;
 }
 
-void Downloader::doDownload()
+void Downloader::doDownload(const QString& url)
 {
     if (!m_manager)
     {
@@ -28,9 +28,6 @@ void Downloader::doDownload()
         connect(m_manager, SIGNAL(finished(QNetworkReply*)),
                 this, SLOT(replyFinished(QNetworkReply*)));
     }
-
-    QUrl url("https://wanpangchang.github.io/QtWebAssemblyExample/WebTest/WebTest.html");
-    //QUrl url("https://dbhub.io/kcimg528/test.db");
 
     m_manager->get(QNetworkRequest(url));
 }

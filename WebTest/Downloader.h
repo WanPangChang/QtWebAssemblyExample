@@ -16,7 +16,7 @@ public:
     
     const QString& getData();
     
-    void doDownload();
+    void doDownload(const QString& url);
 
 signals:
     void receData();
