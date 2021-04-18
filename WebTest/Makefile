@@ -14,10 +14,10 @@ EQ            = =
 
 CC            = emcc
 CXX           = em++
-DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
+DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -O3 -s ALLOW_MEMORY_GROWTH=1 -Wall -W $(DEFINES)
 CXXFLAGS      = -pipe -O3 -std=gnu++11 -s ALLOW_MEMORY_GROWTH=1 -Wall -W $(DEFINES)
-INCPATH       = -I. -I../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include -I../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets -I../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui -I../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore -I. -I/home/wanpangchang/.emscripten_ports/openssl/include -I../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/wasm-emscripten
+INCPATH       = -I. -I/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include -I/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets -I/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui -I/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork -I/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore -I. -I/home/wanpangchang/.emscripten_ports/openssl/include -I/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/wasm-emscripten
 QMAKE         = /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -37,10 +37,10 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = WebTest.js1.0.0
-DISTDIR = /home/wanpangchang/QtProject/WebTest/.tmp/WebTest.js1.0.0
+DISTDIR = /mnt/e/CrossBuild/svn/QtWebAssemblyExample/trunk/WebTest/.tmp/WebTest.js1.0.0
 LINK          = em++
 LFLAGS        = -s WASM=1 -s FULL_ES2=1 -s USE_WEBGL2=1 -s NO_EXIT_RUNTIME=0 -s ERROR_ON_UNDEFINED_SYMBOLS=1 --bind -s "BINARYEN_TRAP_MODE='clamp'" -O3 -s ALLOW_MEMORY_GROWTH=1 /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libqtfreetype.a /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libqtlibpng.a
-LIBS          = $(SUBLIBS) /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/plugins/platforms/libqwasm.a /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libQt5EventDispatcherSupport.a /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libQt5FontDatabaseSupport.a /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libqtfreetype.a /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libQt5EglSupport.a /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/plugins/imageformats/libqgif.a /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/plugins/imageformats/libqico.a /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/plugins/imageformats/libqjpeg.a /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libQt5Widgets.a /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libQt5Gui.a /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libqtlibpng.a /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libqtharfbuzz.a /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libQt5Core.a /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libqtpcre2.a   
+LIBS          = $(SUBLIBS) /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/plugins/platforms/libqwasm.a /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libQt5EventDispatcherSupport.a /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libQt5FontDatabaseSupport.a /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libqtfreetype.a /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libQt5EglSupport.a /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/plugins/imageformats/libqgif.a /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/plugins/imageformats/libqico.a /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/plugins/imageformats/libqjpeg.a /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libQt5Widgets.a /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libQt5Gui.a /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libqtlibpng.a /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libqtharfbuzz.a /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libQt5Network.a /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libQt5Core.a /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libqtpcre2.a   
 AR            = emar cqs
 RANLIB        = 
 SED           = sed
@@ -52,104 +52,110 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = main.cpp /home/wanpangchang/QtProject/WebTest/webtest.js_plugin_import.cpp
+SOURCES       = main.cpp \
+		Downloader.cpp /mnt/e/CrossBuild/svn/QtWebAssemblyExample/trunk/WebTest/webtest.js_plugin_import.cpp \
+		moc_Downloader.cpp
 OBJECTS       = main.o \
-		webtest.js_plugin_import.o
-DIST          = ../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/spec_pre.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/common/sanitize.conf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/common/gcc-base.conf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/common/clang.conf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/qdevice.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/device_config.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/qconfig.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_ext_freetype.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_ext_harfbuzz.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_ext_libpng.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_ext_pcre2.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_accessibility_support_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_bootstrap_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_core.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_core_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_devicediscovery_support_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_edid_support_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_egl_support_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_fb_support_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_fontdatabase_support_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_gui.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_gui_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_network.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_network_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_opengl.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_opengl_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_openglextensions.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_openglextensions_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_platformcompositor_support_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_printsupport.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_printsupport_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_qml.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_qml_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_qml.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_qmldevtools_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_qmldevtools_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_qmltest.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_qmltest_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_qmltest.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_quick.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_quick_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_quick.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_quickparticles_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_quickparticles_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_quickshapes_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_quickshapes_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_quickwidgets.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_quickwidgets_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_quickwidgets.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_service_support_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_svg.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_svg_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_svg.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_testlib.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_testlib_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_theme_support_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_widgets.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_widgets_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_xml.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_xml_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_zlib_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qgif.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qico.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qjpeg.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qminimal.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qoffscreen.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qsvg.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qsvgicon.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qtuiotouchplugin.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qvnc.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qwasm.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/qt_functions.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/qt_config.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/wasm-emscripten/qmake.conf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/spec_post.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/exclusive_builds.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/toolchain.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/default_pre.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/resolve_config.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/default_post.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/wasm/wasm.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/warn_on.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/qt.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/resources.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/moc.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/unix/opengl.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/uic.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/qmake_use.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/file_copies.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/testcase_targets.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/exceptions.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/yacc.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/lex.prf \
-		WebTest.pro  main.cpp
+		Downloader.o \
+		webtest.js_plugin_import.o \
+		moc_Downloader.o
+DIST          = /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/spec_pre.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/common/sanitize.conf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/common/gcc-base.conf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/common/clang.conf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/qdevice.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/device_config.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/qconfig.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_ext_freetype.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_ext_harfbuzz.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_ext_libpng.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_ext_pcre2.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_accessibility_support_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_bootstrap_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_core.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_core_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_devicediscovery_support_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_edid_support_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_egl_support_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_fb_support_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_fontdatabase_support_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_gui.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_gui_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_network.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_network_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_opengl.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_opengl_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_openglextensions.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_openglextensions_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_platformcompositor_support_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_printsupport.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_printsupport_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_qml.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_qml_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_qml.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_qmldevtools_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_qmldevtools_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_qmltest.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_qmltest_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_qmltest.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_quick.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_quick_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_quick.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_quickparticles_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_quickparticles_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_quickshapes_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_quickshapes_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_quickwidgets.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_quickwidgets_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_quickwidgets.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_service_support_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_svg.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_svg_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_svg.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_testlib.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_testlib_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_theme_support_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_widgets.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_widgets_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_xml.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_xml_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_zlib_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qgif.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qico.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qjpeg.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qminimal.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qoffscreen.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qsvg.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qsvgicon.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qtuiotouchplugin.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qvnc.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qwasm.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/qt_functions.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/qt_config.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/wasm-emscripten/qmake.conf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/spec_post.prf \
+		.qmake.stash \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/exclusive_builds.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/toolchain.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/default_pre.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/resolve_config.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/default_post.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/wasm/wasm.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/warn_on.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/qt.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/resources.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/moc.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/unix/opengl.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/uic.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/qmake_use.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/file_copies.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/testcase_targets.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/exceptions.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/yacc.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/lex.prf \
+		WebTest.pro Downloader.h main.cpp \
+		Downloader.cpp
 QMAKE_TARGET  = WebTest.js
 DESTDIR       = 
 TARGET        = WebTest.js
@@ -158,214 +164,218 @@ TARGET        = WebTest.js
 first: all
 ####### Build rules
 
-WebTest.js: /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libQt5Widgets.a /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libQt5Gui.a /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libQt5Core.a $(OBJECTS)  apphtml appjs appsvg
+WebTest.js: /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libQt5Widgets.a /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libQt5Gui.a /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libQt5Network.a /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libQt5Core.a $(OBJECTS)  apphtml appjs appsvg
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
-Makefile: WebTest.pro ../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/wasm-emscripten/qmake.conf ../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/spec_pre.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/common/sanitize.conf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/common/gcc-base.conf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/common/clang.conf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/qdevice.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/device_config.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/qconfig.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_ext_freetype.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_ext_harfbuzz.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_ext_libpng.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_ext_pcre2.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_accessibility_support_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_bootstrap_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_core.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_core_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_devicediscovery_support_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_edid_support_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_egl_support_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_fb_support_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_fontdatabase_support_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_gui.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_gui_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_network.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_network_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_opengl.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_opengl_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_openglextensions.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_openglextensions_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_platformcompositor_support_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_printsupport.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_printsupport_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_qml.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_qml_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_qml.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_qmldevtools_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_qmldevtools_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_qmltest.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_qmltest_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_qmltest.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_quick.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_quick_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_quick.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_quickparticles_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_quickparticles_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_quickshapes_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_quickshapes_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_quickwidgets.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_quickwidgets_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_quickwidgets.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_service_support_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_svg.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_svg_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_svg.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_testlib.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_testlib_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_theme_support_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_widgets.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_widgets_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_xml.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_xml_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_zlib_private.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qgif.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qico.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qjpeg.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qminimal.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qoffscreen.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qsvg.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qsvgicon.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qtuiotouchplugin.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qvnc.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qwasm.pri \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/qt_functions.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/qt_config.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/wasm-emscripten/qmake.conf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/spec_post.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/exclusive_builds.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/toolchain.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/default_pre.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/resolve_config.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/default_post.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/wasm/wasm.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/warn_on.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/qt.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/resources.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/moc.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/unix/opengl.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/uic.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/qmake_use.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/file_copies.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/testcase_targets.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/exceptions.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/yacc.prf \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/lex.prf \
+Makefile: WebTest.pro /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/wasm-emscripten/qmake.conf /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/spec_pre.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/common/sanitize.conf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/common/gcc-base.conf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/common/clang.conf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/qdevice.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/device_config.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/qconfig.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_ext_freetype.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_ext_harfbuzz.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_ext_libpng.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_ext_pcre2.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_accessibility_support_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_bootstrap_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_core.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_core_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_devicediscovery_support_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_edid_support_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_egl_support_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_fb_support_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_fontdatabase_support_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_gui.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_gui_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_network.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_network_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_opengl.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_opengl_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_openglextensions.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_openglextensions_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_platformcompositor_support_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_printsupport.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_printsupport_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_qml.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_qml_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_qml.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_qmldevtools_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_qmldevtools_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_qmltest.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_qmltest_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_qmltest.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_quick.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_quick_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_quick.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_quickparticles_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_quickparticles_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_quickshapes_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_quickshapes_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_quickwidgets.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_quickwidgets_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_quickwidgets.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_service_support_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_svg.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_svg_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_svg.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_testlib.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_testlib_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_theme_support_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_widgets.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_widgets_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_xml.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_xml_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_zlib_private.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qgif.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qico.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qjpeg.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qminimal.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qoffscreen.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qsvg.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qsvgicon.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qtuiotouchplugin.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qvnc.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qwasm.pri \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/qt_functions.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/qt_config.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/wasm-emscripten/qmake.conf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/spec_post.prf \
+		.qmake.stash \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/exclusive_builds.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/toolchain.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/default_pre.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/resolve_config.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/default_post.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/wasm/wasm.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/warn_on.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/qt.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/resources.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/moc.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/unix/opengl.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/uic.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/qmake_use.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/file_copies.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/testcase_targets.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/exceptions.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/yacc.prf \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/lex.prf \
 		WebTest.pro \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/plugins/platforms/libqwasm.prl \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/plugins/imageformats/libqgif.prl \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/plugins/imageformats/libqico.prl \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/plugins/imageformats/libqjpeg.prl \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libQt5Widgets.prl \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libQt5Gui.prl \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libQt5Core.prl
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/plugins/platforms/libqwasm.prl \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/plugins/imageformats/libqgif.prl \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/plugins/imageformats/libqico.prl \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/plugins/imageformats/libqjpeg.prl \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libQt5Widgets.prl \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libQt5Gui.prl \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libQt5Network.prl \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libQt5Core.prl
 	$(QMAKE) -o Makefile WebTest.pro
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/spec_pre.prf:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/common/sanitize.conf:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/common/gcc-base.conf:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/common/clang.conf:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/qdevice.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/device_config.prf:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/qconfig.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_ext_freetype.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_ext_harfbuzz.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_ext_libpng.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_ext_pcre2.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_accessibility_support_private.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_bootstrap_private.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_core.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_core_private.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_devicediscovery_support_private.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_edid_support_private.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_egl_support_private.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_fb_support_private.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_fontdatabase_support_private.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_gui.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_gui_private.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_network.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_network_private.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_opengl.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_opengl_private.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_openglextensions.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_openglextensions_private.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_platformcompositor_support_private.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_printsupport.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_printsupport_private.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_qml.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_qml_private.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_qml.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_qmldevtools_private.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_qmldevtools_private.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_qmltest.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_qmltest_private.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_qmltest.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_quick.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_quick_private.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_quick.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_quickparticles_private.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_quickparticles_private.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_quickshapes_private.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_quickshapes_private.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_quickwidgets.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_quickwidgets_private.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_quickwidgets.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_service_support_private.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_svg.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_svg_private.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_svg.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_testlib.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_testlib_private.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_theme_support_private.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_widgets.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_widgets_private.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_xml.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_xml_private.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_zlib_private.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qgif.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qico.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qjpeg.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qminimal.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qoffscreen.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qsvg.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qsvgicon.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qtuiotouchplugin.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qvnc.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qwasm.pri:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/qt_functions.prf:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/qt_config.prf:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/wasm-emscripten/qmake.conf:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/spec_post.prf:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/exclusive_builds.prf:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/toolchain.prf:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/default_pre.prf:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/resolve_config.prf:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/default_post.prf:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/wasm/wasm.prf:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/warn_on.prf:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/qt.prf:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/resources.prf:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/moc.prf:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/unix/opengl.prf:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/uic.prf:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/qmake_use.prf:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/file_copies.prf:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/testcase_targets.prf:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/exceptions.prf:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/yacc.prf:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/lex.prf:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/spec_pre.prf:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/common/sanitize.conf:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/common/gcc-base.conf:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/common/clang.conf:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/qdevice.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/device_config.prf:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/qconfig.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_ext_freetype.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_ext_harfbuzz.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_ext_libpng.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_ext_pcre2.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_accessibility_support_private.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_bootstrap_private.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_core.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_core_private.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_devicediscovery_support_private.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_edid_support_private.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_egl_support_private.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_fb_support_private.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_fontdatabase_support_private.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_gui.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_gui_private.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_network.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_network_private.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_opengl.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_opengl_private.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_openglextensions.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_openglextensions_private.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_platformcompositor_support_private.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_printsupport.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_printsupport_private.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_qml.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_qml_private.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_qml.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_qmldevtools_private.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_qmldevtools_private.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_qmltest.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_qmltest_private.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_qmltest.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_quick.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_quick_private.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_quick.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_quickparticles_private.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_quickparticles_private.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_quickshapes_private.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_quickshapes_private.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_quickwidgets.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_quickwidgets_private.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_quickwidgets.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_service_support_private.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_svg.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules-inst/qt_lib_svg_private.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_svg.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_testlib.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_testlib_private.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_theme_support_private.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_widgets.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_widgets_private.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_xml.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_xml_private.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_lib_zlib_private.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qgif.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qico.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qjpeg.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qminimal.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qoffscreen.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qsvg.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qsvgicon.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qtuiotouchplugin.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qvnc.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/modules/qt_plugin_qwasm.pri:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/qt_functions.prf:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/qt_config.prf:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/wasm-emscripten/qmake.conf:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/spec_post.prf:
+.qmake.stash:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/exclusive_builds.prf:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/toolchain.prf:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/default_pre.prf:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/resolve_config.prf:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/default_post.prf:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/wasm/wasm.prf:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/warn_on.prf:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/qt.prf:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/resources.prf:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/moc.prf:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/unix/opengl.prf:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/uic.prf:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/qmake_use.prf:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/file_copies.prf:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/testcase_targets.prf:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/exceptions.prf:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/yacc.prf:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/lex.prf:
 WebTest.pro:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/plugins/platforms/libqwasm.prl:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/plugins/imageformats/libqgif.prl:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/plugins/imageformats/libqico.prl:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/plugins/imageformats/libqjpeg.prl:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libQt5Widgets.prl:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libQt5Gui.prl:
-../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libQt5Core.prl:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/plugins/platforms/libqwasm.prl:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/plugins/imageformats/libqgif.prl:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/plugins/imageformats/libqico.prl:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/plugins/imageformats/libqjpeg.prl:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libQt5Widgets.prl:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libQt5Gui.prl:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libQt5Network.prl:
+/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/lib/libQt5Core.prl:
 qmake: FORCE
 	@$(QMAKE) -o Makefile WebTest.pro
 
@@ -380,8 +390,9 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/data/dummy.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents Downloader.h $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp Downloader.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -391,20 +402,20 @@ clean: compiler_clean
 
 distclean: clean 
 	-$(DEL_FILE) $(TARGET) 
-	-$(DEL_FILE) *.html *.js *.wasm /home/wanpangchang/QtProject/WebTest/webtest.js_plugin_import.cpp .qmake.stash
+	-$(DEL_FILE) *.html *.js *.wasm /mnt/e/CrossBuild/svn/QtWebAssemblyExample/trunk/WebTest/webtest.js_plugin_import.cpp .qmake.stash
 	-$(DEL_FILE) Makefile
 
 
 ####### Sub-libraries
 
 apphtml: /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/wasm/../../../src/plugins/platforms/wasm/wasm_shell.html
-	sed -e s/@APPNAME@/WebTest/g /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/wasm/../../../src/plugins/platforms/wasm/wasm_shell.html > /home/wanpangchang/QtProject/WebTest/WebTest.html
+	sed -e s/@APPNAME@/WebTest/g /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/wasm/../../../src/plugins/platforms/wasm/wasm_shell.html > /mnt/e/CrossBuild/svn/QtWebAssemblyExample/trunk/WebTest/WebTest.html
 
 appjs: /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/wasm/../../../src/plugins/platforms/wasm/qtloader.js
-	cp -f /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/wasm/../../../src/plugins/platforms/wasm/qtloader.js /home/wanpangchang/QtProject/WebTest
+	cp -f /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/wasm/../../../src/plugins/platforms/wasm/qtloader.js /mnt/e/CrossBuild/svn/QtWebAssemblyExample/trunk/WebTest
 
 appsvg: /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/wasm/../../../src/plugins/platforms/wasm/qtlogo.svg
-	cp -f /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/wasm/../../../src/plugins/platforms/wasm/qtlogo.svg /home/wanpangchang/QtProject/WebTest
+	cp -f /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/wasm/../../../src/plugins/platforms/wasm/qtlogo.svg /mnt/e/CrossBuild/svn/QtWebAssemblyExample/trunk/WebTest
 
 shellfiles: apphtml appjs appsvg
 
@@ -430,11 +441,191 @@ compiler_rcc_clean:
 compiler_moc_predefs_make_all: moc_predefs.h
 compiler_moc_predefs_clean:
 	-$(DEL_FILE) moc_predefs.h
-moc_predefs.h: ../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/data/dummy.cpp
-	em++ -pipe -O3 -std=gnu++11 -s ALLOW_MEMORY_GROWTH=1 -Wall -W -dM -E -o moc_predefs.h ../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/data/dummy.cpp
+moc_predefs.h: /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/data/dummy.cpp
+	em++ -pipe -O3 -std=gnu++11 -s ALLOW_MEMORY_GROWTH=1 -Wall -W -dM -E -o moc_predefs.h /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all:
+compiler_moc_header_make_all: moc_Downloader.cpp
 compiler_moc_header_clean:
+	-$(DEL_FILE) moc_Downloader.cpp
+moc_Downloader.cpp: Downloader.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/QObject \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qobject.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/kernel/qobject.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qobjectdefs.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/kernel/qobjectdefs.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qnamespace.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qnamespace.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qglobal.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qglobal.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qconfig-bootstrapped.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qconfig-bootstrapped.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qconfig.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qconfig.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qtcore-config.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/qtcore-config.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qsystemdetection.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qsystemdetection.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qprocessordetection.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qprocessordetection.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qcompilerdetection.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qcompilerdetection.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qtypeinfo.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qtypeinfo.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qsysinfo.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qsysinfo.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qlogging.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qlogging.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qflags.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qflags.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qatomic.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/thread/qatomic.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qbasicatomic.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/thread/qbasicatomic.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qatomic_bootstrap.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/thread/qatomic_bootstrap.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qgenericatomic.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/thread/qgenericatomic.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qatomic_cxx11.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/thread/qatomic_cxx11.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qatomic_msvc.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/thread/qatomic_msvc.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qglobalstatic.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qglobalstatic.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qmutex.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/thread/qmutex.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qnumeric.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qnumeric.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qversiontagging.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qversiontagging.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qobjectdefs_impl.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/kernel/qobjectdefs_impl.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qstring.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qstring.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qchar.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qchar.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qbytearray.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qbytearray.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qrefcount.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qrefcount.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qarraydata.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qarraydata.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qstringliteral.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qstringliteral.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qstringalgorithms.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qstringalgorithms.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qstringview.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qstringview.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qstringbuilder.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qstringbuilder.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qlist.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qlist.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qalgorithms.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qalgorithms.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qiterator.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qiterator.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qhashfunctions.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qhashfunctions.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qpair.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qpair.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qvector.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qvector.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qpoint.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qpoint.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qbytearraylist.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qbytearraylist.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qstringlist.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qstringlist.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qregexp.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qregexp.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qstringmatcher.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qstringmatcher.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qcoreevent.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/kernel/qcoreevent.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qscopedpointer.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qscopedpointer.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qmetatype.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/kernel/qmetatype.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qvarlengtharray.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qvarlengtharray.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qcontainerfwd.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qcontainerfwd.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qobject_impl.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/kernel/qobject_impl.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/QString \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/QNetworkAccessManager \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qnetworkaccessmanager.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/access/qnetworkaccessmanager.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qtnetworkglobal.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/kernel/qtnetworkglobal.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qtnetwork-config.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/qtnetwork-config.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qnetworkrequest.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/access/qnetworkrequest.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/QSharedDataPointer \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qshareddata.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qshareddata.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qhash.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qhash.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/QUrl \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qurl.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/io/qurl.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qurlquery.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/io/qurlquery.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/QVariant \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qvariant.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/kernel/qvariant.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qmap.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qmap.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qdebug.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/io/qdebug.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qtextstream.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/serialization/qtextstream.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qiodevice.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/io/qiodevice.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qlocale.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qlocale.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qset.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qset.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qcontiguouscache.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qcontiguouscache.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qsharedpointer.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qsharedpointer.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qsharedpointer_impl.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qsharedpointer_impl.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/QVector \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/QSslConfiguration \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qsslconfiguration.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/ssl/qsslconfiguration.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qsslsocket.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/ssl/qsslsocket.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qtcpsocket.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/socket/qtcpsocket.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qabstractsocket.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/socket/qabstractsocket.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qsslerror.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/ssl/qsslerror.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qsslcertificate.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/ssl/qsslcertificate.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qcryptographichash.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qcryptographichash.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qdatetime.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qdatetime.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qssl.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/ssl/qssl.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/QFlags \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/ssl/qsslpresharedkeyauthenticator.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/QMetaType \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/QNetworkRequest \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/QNetworkReply \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qnetworkreply.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/access/qnetworkreply.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/QIODevice \
+		moc_predefs.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/bin/moc
+	/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/bin/moc $(DEFINES) --include /mnt/e/CrossBuild/svn/QtWebAssemblyExample/trunk/WebTest/moc_predefs.h -I/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/mkspecs/wasm-emscripten -I/mnt/e/CrossBuild/svn/QtWebAssemblyExample/trunk/WebTest -I/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include -I/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets -I/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui -I/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork -I/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore Downloader.h -o moc_Downloader.cpp
+
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
@@ -447,248 +638,556 @@ compiler_yacc_impl_make_all:
 compiler_yacc_impl_clean:
 compiler_lex_make_all:
 compiler_lex_clean:
-compiler_clean: compiler_moc_predefs_clean 
+compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean 
 
 ####### Compile
 
-main.o: main.cpp ../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/QApplication \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qapplication.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/kernel/qapplication.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qtwidgetsglobal.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/kernel/qtwidgetsglobal.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qtguiglobal.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/kernel/qtguiglobal.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qglobal.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qglobal.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qconfig-bootstrapped.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qconfig-bootstrapped.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qconfig.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qconfig.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qtcore-config.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/qtcore-config.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qsystemdetection.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qsystemdetection.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qprocessordetection.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qprocessordetection.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qcompilerdetection.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qcompilerdetection.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qtypeinfo.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qtypeinfo.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qsysinfo.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qsysinfo.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qlogging.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qlogging.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qflags.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qflags.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qatomic.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/thread/qatomic.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qbasicatomic.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/thread/qbasicatomic.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qatomic_bootstrap.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/thread/qatomic_bootstrap.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qgenericatomic.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/thread/qgenericatomic.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qatomic_cxx11.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/thread/qatomic_cxx11.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qatomic_msvc.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/thread/qatomic_msvc.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qglobalstatic.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qglobalstatic.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qmutex.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/thread/qmutex.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qnumeric.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qnumeric.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qversiontagging.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qversiontagging.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qtgui-config.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/qtgui-config.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qtwidgets-config.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/qtwidgets-config.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qcoreapplication.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/kernel/qcoreapplication.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qstring.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qstring.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qchar.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qchar.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qbytearray.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qbytearray.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qrefcount.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qrefcount.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qnamespace.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qnamespace.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qarraydata.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qarraydata.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qstringliteral.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qstringliteral.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qstringalgorithms.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qstringalgorithms.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qstringview.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qstringview.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qstringbuilder.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qstringbuilder.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qobject.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/kernel/qobject.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qobjectdefs.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/kernel/qobjectdefs.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qobjectdefs_impl.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/kernel/qobjectdefs_impl.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qlist.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qlist.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qalgorithms.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qalgorithms.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qiterator.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qiterator.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qhashfunctions.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qhashfunctions.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qpair.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qpair.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qvector.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qvector.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qpoint.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qpoint.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qbytearraylist.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qbytearraylist.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qstringlist.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qstringlist.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qregexp.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qregexp.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qstringmatcher.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qstringmatcher.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qcoreevent.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/kernel/qcoreevent.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qscopedpointer.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qscopedpointer.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qmetatype.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/kernel/qmetatype.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qvarlengtharray.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qvarlengtharray.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qcontainerfwd.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qcontainerfwd.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qobject_impl.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/kernel/qobject_impl.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qeventloop.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/kernel/qeventloop.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qwindowdefs.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/kernel/qwindowdefs.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qwindowdefs_win.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/kernel/qwindowdefs_win.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qsize.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qsize.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qcursor.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/kernel/qcursor.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qdesktopwidget.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/kernel/qdesktopwidget.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qwidget.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/kernel/qwidget.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qmargins.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qmargins.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qpaintdevice.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/painting/qpaintdevice.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qrect.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qrect.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qpalette.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/kernel/qpalette.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qcolor.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/painting/qcolor.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qrgb.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/painting/qrgb.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qrgba64.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/painting/qrgba64.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qbrush.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/painting/qbrush.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qmatrix.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/painting/qmatrix.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qpolygon.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/painting/qpolygon.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qregion.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/painting/qregion.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qdatastream.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/serialization/qdatastream.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qiodevice.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/io/qiodevice.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qline.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qline.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qtransform.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/painting/qtransform.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qpainterpath.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/painting/qpainterpath.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qimage.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/image/qimage.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qpixelformat.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/kernel/qpixelformat.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qpixmap.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/image/qpixmap.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qsharedpointer.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qsharedpointer.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qshareddata.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qshareddata.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qhash.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qhash.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qsharedpointer_impl.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qsharedpointer_impl.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qfont.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/text/qfont.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qfontmetrics.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/text/qfontmetrics.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qfontinfo.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/text/qfontinfo.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qsizepolicy.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/kernel/qsizepolicy.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qkeysequence.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/kernel/qkeysequence.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qevent.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/kernel/qevent.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qvariant.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/kernel/qvariant.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qmap.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qmap.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qdebug.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/io/qdebug.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qtextstream.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/serialization/qtextstream.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qlocale.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qlocale.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qset.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qset.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qcontiguouscache.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qcontiguouscache.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qurl.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/io/qurl.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qurlquery.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/io/qurlquery.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qfile.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/io/qfile.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qfiledevice.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/io/qfiledevice.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qvector2d.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/math3d/qvector2d.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qtouchdevice.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/kernel/qtouchdevice.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qguiapplication.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/kernel/qguiapplication.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qinputmethod.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/kernel/qinputmethod.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/QMainWindow \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qmainwindow.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/widgets/qmainwindow.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qtabwidget.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/widgets/qtabwidget.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qicon.h \
-		../../lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/image/qicon.h
+main.o: main.cpp /home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/QApplication \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qapplication.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/kernel/qapplication.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qtwidgetsglobal.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/kernel/qtwidgetsglobal.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qtguiglobal.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/kernel/qtguiglobal.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qglobal.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qglobal.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qconfig-bootstrapped.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qconfig-bootstrapped.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qconfig.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qconfig.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qtcore-config.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/qtcore-config.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qsystemdetection.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qsystemdetection.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qprocessordetection.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qprocessordetection.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qcompilerdetection.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qcompilerdetection.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qtypeinfo.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qtypeinfo.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qsysinfo.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qsysinfo.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qlogging.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qlogging.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qflags.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qflags.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qatomic.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/thread/qatomic.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qbasicatomic.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/thread/qbasicatomic.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qatomic_bootstrap.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/thread/qatomic_bootstrap.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qgenericatomic.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/thread/qgenericatomic.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qatomic_cxx11.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/thread/qatomic_cxx11.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qatomic_msvc.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/thread/qatomic_msvc.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qglobalstatic.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qglobalstatic.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qmutex.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/thread/qmutex.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qnumeric.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qnumeric.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qversiontagging.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qversiontagging.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qtgui-config.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/qtgui-config.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qtwidgets-config.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/qtwidgets-config.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qcoreapplication.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/kernel/qcoreapplication.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qstring.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qstring.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qchar.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qchar.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qbytearray.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qbytearray.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qrefcount.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qrefcount.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qnamespace.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qnamespace.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qarraydata.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qarraydata.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qstringliteral.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qstringliteral.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qstringalgorithms.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qstringalgorithms.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qstringview.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qstringview.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qstringbuilder.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qstringbuilder.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qobject.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/kernel/qobject.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qobjectdefs.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/kernel/qobjectdefs.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qobjectdefs_impl.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/kernel/qobjectdefs_impl.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qlist.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qlist.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qalgorithms.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qalgorithms.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qiterator.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qiterator.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qhashfunctions.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qhashfunctions.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qpair.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qpair.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qvector.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qvector.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qpoint.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qpoint.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qbytearraylist.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qbytearraylist.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qstringlist.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qstringlist.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qregexp.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qregexp.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qstringmatcher.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qstringmatcher.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qcoreevent.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/kernel/qcoreevent.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qscopedpointer.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qscopedpointer.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qmetatype.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/kernel/qmetatype.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qvarlengtharray.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qvarlengtharray.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qcontainerfwd.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qcontainerfwd.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qobject_impl.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/kernel/qobject_impl.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qeventloop.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/kernel/qeventloop.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qwindowdefs.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/kernel/qwindowdefs.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qwindowdefs_win.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/kernel/qwindowdefs_win.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qsize.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qsize.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qcursor.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/kernel/qcursor.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qdesktopwidget.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/kernel/qdesktopwidget.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qwidget.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/kernel/qwidget.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qmargins.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qmargins.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qpaintdevice.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/painting/qpaintdevice.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qrect.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qrect.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qpalette.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/kernel/qpalette.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qcolor.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/painting/qcolor.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qrgb.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/painting/qrgb.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qrgba64.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/painting/qrgba64.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qbrush.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/painting/qbrush.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qmatrix.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/painting/qmatrix.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qpolygon.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/painting/qpolygon.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qregion.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/painting/qregion.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qdatastream.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/serialization/qdatastream.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qiodevice.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/io/qiodevice.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qline.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qline.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qtransform.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/painting/qtransform.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qpainterpath.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/painting/qpainterpath.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qimage.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/image/qimage.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qpixelformat.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/kernel/qpixelformat.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qpixmap.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/image/qpixmap.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qsharedpointer.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qsharedpointer.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qshareddata.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qshareddata.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qhash.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qhash.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qsharedpointer_impl.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qsharedpointer_impl.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qfont.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/text/qfont.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qfontmetrics.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/text/qfontmetrics.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qfontinfo.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/text/qfontinfo.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qsizepolicy.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/kernel/qsizepolicy.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qkeysequence.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/kernel/qkeysequence.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qevent.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/kernel/qevent.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qvariant.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/kernel/qvariant.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qmap.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qmap.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qdebug.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/io/qdebug.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qtextstream.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/serialization/qtextstream.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qlocale.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qlocale.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qset.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qset.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qcontiguouscache.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qcontiguouscache.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qurl.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/io/qurl.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qurlquery.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/io/qurlquery.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qfile.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/io/qfile.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qfiledevice.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/io/qfiledevice.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qvector2d.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/math3d/qvector2d.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qtouchdevice.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/kernel/qtouchdevice.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qguiapplication.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/kernel/qguiapplication.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qinputmethod.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/kernel/qinputmethod.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/QFileSystemModel \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qfilesystemmodel.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/dialogs/qfilesystemmodel.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qabstractitemmodel.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/itemmodels/qabstractitemmodel.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qdir.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/io/qdir.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qfileinfo.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/io/qfileinfo.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qicon.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/image/qicon.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qdiriterator.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/io/qdiriterator.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/QDir \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/QGridLayout \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qgridlayout.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/kernel/qgridlayout.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qlayout.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/kernel/qlayout.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qlayoutitem.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/kernel/qlayoutitem.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qboxlayout.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/kernel/qboxlayout.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/QLabel \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qlabel.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/widgets/qlabel.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qframe.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/widgets/qframe.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/QLineEdit \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qlineedit.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/widgets/qlineedit.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qtextcursor.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/text/qtextcursor.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qtextformat.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/text/qtextformat.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qpen.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/painting/qpen.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qtextoption.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/text/qtextoption.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/QTextEdit \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qtextedit.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/widgets/qtextedit.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qabstractscrollarea.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/widgets/qabstractscrollarea.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qtextdocument.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/text/qtextdocument.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/QTextStream \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/QPushButton \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qpushbutton.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/widgets/qpushbutton.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qabstractbutton.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/widgets/qabstractbutton.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/QDebug \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/QFileDialog \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qfiledialog.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/dialogs/qfiledialog.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qdialog.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/dialogs/qdialog.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/QTableView \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qtableview.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/itemviews/qtableview.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qabstractitemview.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/itemviews/qabstractitemview.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qitemselectionmodel.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/itemmodels/qitemselectionmodel.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qabstractitemdelegate.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/itemviews/qabstractitemdelegate.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qstyleoption.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/styles/qstyleoption.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qabstractspinbox.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/widgets/qabstractspinbox.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtGui/qvalidator.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/gui/util/qvalidator.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qregularexpression.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qregularexpression.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qslider.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/widgets/qslider.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qabstractslider.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/widgets/qabstractslider.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qstyle.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/styles/qstyle.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qtabbar.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/widgets/qtabbar.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qtabwidget.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/widgets/qtabwidget.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/qrubberband.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/widgets/widgets/qrubberband.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtWidgets/QTabWidget \
+		Downloader.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/QObject \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/QString \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/QNetworkAccessManager \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qnetworkaccessmanager.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/access/qnetworkaccessmanager.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qtnetworkglobal.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/kernel/qtnetworkglobal.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qtnetwork-config.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/qtnetwork-config.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qnetworkrequest.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/access/qnetworkrequest.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/QSharedDataPointer \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/QUrl \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/QVariant \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/QVector \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/QSslConfiguration \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qsslconfiguration.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/ssl/qsslconfiguration.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qsslsocket.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/ssl/qsslsocket.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qtcpsocket.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/socket/qtcpsocket.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qabstractsocket.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/socket/qabstractsocket.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qsslerror.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/ssl/qsslerror.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qsslcertificate.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/ssl/qsslcertificate.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qcryptographichash.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qcryptographichash.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qdatetime.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qdatetime.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qssl.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/ssl/qssl.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/QFlags \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/ssl/qsslpresharedkeyauthenticator.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/QMetaType \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/QNetworkRequest \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/QNetworkReply \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qnetworkreply.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/access/qnetworkreply.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/QIODevice
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
-webtest.js_plugin_import.o: /home/wanpangchang/QtProject/WebTest/webtest.js_plugin_import.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o webtest.js_plugin_import.o /home/wanpangchang/QtProject/WebTest/webtest.js_plugin_import.cpp
+Downloader.o: Downloader.cpp Downloader.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/QObject \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qobject.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/kernel/qobject.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qobjectdefs.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/kernel/qobjectdefs.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qnamespace.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qnamespace.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qglobal.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qglobal.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qconfig-bootstrapped.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qconfig-bootstrapped.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qconfig.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qconfig.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qtcore-config.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/qtcore-config.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qsystemdetection.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qsystemdetection.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qprocessordetection.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qprocessordetection.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qcompilerdetection.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qcompilerdetection.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qtypeinfo.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qtypeinfo.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qsysinfo.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qsysinfo.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qlogging.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qlogging.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qflags.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qflags.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qatomic.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/thread/qatomic.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qbasicatomic.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/thread/qbasicatomic.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qatomic_bootstrap.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/thread/qatomic_bootstrap.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qgenericatomic.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/thread/qgenericatomic.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qatomic_cxx11.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/thread/qatomic_cxx11.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qatomic_msvc.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/thread/qatomic_msvc.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qglobalstatic.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qglobalstatic.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qmutex.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/thread/qmutex.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qnumeric.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qnumeric.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qversiontagging.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/global/qversiontagging.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qobjectdefs_impl.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/kernel/qobjectdefs_impl.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qstring.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qstring.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qchar.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qchar.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qbytearray.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qbytearray.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qrefcount.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qrefcount.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qarraydata.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qarraydata.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qstringliteral.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qstringliteral.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qstringalgorithms.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qstringalgorithms.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qstringview.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qstringview.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qstringbuilder.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qstringbuilder.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qlist.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qlist.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qalgorithms.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qalgorithms.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qiterator.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qiterator.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qhashfunctions.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qhashfunctions.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qpair.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qpair.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qvector.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qvector.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qpoint.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qpoint.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qbytearraylist.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qbytearraylist.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qstringlist.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qstringlist.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qregexp.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qregexp.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qstringmatcher.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qstringmatcher.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qcoreevent.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/kernel/qcoreevent.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qscopedpointer.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qscopedpointer.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qmetatype.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/kernel/qmetatype.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qvarlengtharray.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qvarlengtharray.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qcontainerfwd.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qcontainerfwd.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qobject_impl.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/kernel/qobject_impl.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/QString \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/QNetworkAccessManager \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qnetworkaccessmanager.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/access/qnetworkaccessmanager.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qtnetworkglobal.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/kernel/qtnetworkglobal.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qtnetwork-config.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/qtnetwork-config.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qnetworkrequest.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/access/qnetworkrequest.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/QSharedDataPointer \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qshareddata.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qshareddata.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qhash.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qhash.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/QUrl \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qurl.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/io/qurl.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qurlquery.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/io/qurlquery.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/QVariant \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qvariant.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/kernel/qvariant.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qmap.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qmap.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qdebug.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/io/qdebug.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qtextstream.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/serialization/qtextstream.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qiodevice.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/io/qiodevice.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qlocale.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qlocale.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qset.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qset.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qcontiguouscache.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qcontiguouscache.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qsharedpointer.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qsharedpointer.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qsharedpointer_impl.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qsharedpointer_impl.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/QVector \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/QSslConfiguration \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qsslconfiguration.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/ssl/qsslconfiguration.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qsslsocket.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/ssl/qsslsocket.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qtcpsocket.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/socket/qtcpsocket.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qabstractsocket.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/socket/qabstractsocket.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qsslerror.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/ssl/qsslerror.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qsslcertificate.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/ssl/qsslcertificate.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qcryptographichash.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qcryptographichash.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/qdatetime.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/corelib/tools/qdatetime.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qssl.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/ssl/qssl.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/QFlags \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/ssl/qsslpresharedkeyauthenticator.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/QMetaType \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/QNetworkRequest \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/QNetworkReply \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtNetwork/qnetworkreply.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/src/network/access/qnetworkreply.h \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/QIODevice \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/QDateTime \
+		/home/wanpangchang/lib/Qt/qt-everywhere-src-5.13.1/qtbase/include/QtCore/QDebug
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Downloader.o Downloader.cpp
+
+webtest.js_plugin_import.o: /mnt/e/CrossBuild/svn/QtWebAssemblyExample/trunk/WebTest/webtest.js_plugin_import.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o webtest.js_plugin_import.o /mnt/e/CrossBuild/svn/QtWebAssemblyExample/trunk/WebTest/webtest.js_plugin_import.cpp
+
+moc_Downloader.o: moc_Downloader.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_Downloader.o moc_Downloader.cpp
 
 ####### Install
 
 install_js_file: first FORCE
-	@test -d $(INSTALL_ROOT)/home/wanpangchang/QtProject/WebTest/./ || mkdir -p $(INSTALL_ROOT)/home/wanpangchang/QtProject/WebTest/./
-	-$(QINSTALL_PROGRAM) /home/wanpangchang/QtProject/WebTest/WebTest.js $(INSTALL_ROOT)/home/wanpangchang/QtProject/WebTest/./WebTest.js
+	@test -d $(INSTALL_ROOT)/mnt/e/CrossBuild/svn/QtWebAssemblyExample/trunk/WebTest/./ || mkdir -p $(INSTALL_ROOT)/mnt/e/CrossBuild/svn/QtWebAssemblyExample/trunk/WebTest/./
+	-$(QINSTALL_PROGRAM) /mnt/e/CrossBuild/svn/QtWebAssemblyExample/trunk/WebTest/WebTest.js $(INSTALL_ROOT)/mnt/e/CrossBuild/svn/QtWebAssemblyExample/trunk/WebTest/./WebTest.js
 
 uninstall_js_file: FORCE
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/home/wanpangchang/QtProject/WebTest/./WebTest.js
-	-$(DEL_DIR) $(INSTALL_ROOT)/home/wanpangchang/QtProject/WebTest/./ 
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/mnt/e/CrossBuild/svn/QtWebAssemblyExample/trunk/WebTest/./WebTest.js
+	-$(DEL_DIR) $(INSTALL_ROOT)/mnt/e/CrossBuild/svn/QtWebAssemblyExample/trunk/WebTest/./ 
 
 
 install: install_js_file  FORCE
