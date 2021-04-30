@@ -1,4 +1,5 @@
 #include <functional>
+#include <QtGlobal>
 #include <QApplication>
 #include <QFileSystemModel>
 #include <QDir>
@@ -150,7 +151,9 @@ int main(int argc, char* argv[])
     
     auto onSaveContentClicked = [=]()
     {
+#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
         QFileDialog::saveFileContent(contentSelected->toPlainText().toLatin1(), pathSelected->text());
+#endif
     };
 
     QObject::connect(selectPath, &QPushButton::clicked, std::bind(onSelectPathClicked));
