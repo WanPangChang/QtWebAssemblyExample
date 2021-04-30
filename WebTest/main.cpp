@@ -84,7 +84,7 @@ int main(int argc, char* argv[])
     }
     
     {
-        std::vector<QString> kTitles = {"Path", "Downloader", "SOL"};
+        std::vector<QString> kTitles = {"Path", "Downloader", "SQL"};
         std::vector<int> kNumOfCols = {2, 1, 1};
         std::vector<std::vector<QWidget*>> itemTable =
         {
@@ -145,12 +145,12 @@ int main(int argc, char* argv[])
     
     auto onLoadContentClicked = [=]()
     {
-        getOpenFileContentImpl(pathSelected->text(), contentSelected->toPlainText().toLatin1());
+        // getOpenFileContentImpl(pathSelected->text(), contentSelected->toPlainText().toLatin1());
     };
     
     auto onSaveContentClicked = [=]()
     {
-        // FileDialog::saveFileContentcontentSelected->toPlainText().toLatin1(), pathSelected->text());
+        QFileDialog::saveFileContent(contentSelected->toPlainText().toLatin1(), pathSelected->text());
     };
 
     QObject::connect(selectPath, &QPushButton::clicked, std::bind(onSelectPathClicked));
@@ -159,6 +159,3 @@ int main(int argc, char* argv[])
     
     return a.exec();
 }
-
-
-    
