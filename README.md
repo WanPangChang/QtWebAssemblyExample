@@ -1,4 +1,4 @@
-```sh
+```bash
 git clone https://github.com/WanPangChang/QtWebAssemblyExample.git
 docker pull wanpangchang/qt-webassembly
 cd QtWebAssemblyExample/WebTest/
