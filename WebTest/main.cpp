@@ -68,7 +68,7 @@ int main(int argc, char* argv[])
         std::vector<QString> addresses =
         {
             "https://wanpangchang.github.io/QtWebAssemblyExample/WebTest/Demo.csv",
-            "https://dbhub.io/kcimg528/test.db",
+            "https://dbhub.io/x/download/kcimg528/test.db",
         };
         
         for (size_t i = 0; i < textContents.size(); ++i)
