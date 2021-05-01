@@ -10,3 +10,5 @@ SOURCES += \
     
 HEADERS += \
     Downloader.h
+
+INCLUDEPATH += /emsdk_portable/sdk/system/include

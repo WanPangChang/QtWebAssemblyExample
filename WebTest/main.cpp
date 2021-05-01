@@ -1,4 +1,5 @@
 #include <functional>
+#include <boost/version.hpp>
 #include <QtGlobal>
 #include <QApplication>
 #include <QFileSystemModel>
@@ -146,7 +147,7 @@ int main(int argc, char* argv[])
     
     auto onLoadContentClicked = [=]()
     {
-        // getOpenFileContentImpl(pathSelected->text(), contentSelected->toPlainText().toLatin1());
+        getOpenFileContentImpl("BOOST_VERSION.txt", QString::number(BOOST_VERSION).toLatin1());
     };
     
     auto onSaveContentClicked = [=]()
