@@ -1,5 +1,7 @@
 #include <functional>
 #include <boost/version.hpp>
+#include <opencv2/core.hpp>
+#include <opencv2/imgproc.hpp>
 #include <QtGlobal>
 #include <QApplication>
 #include <QFileSystemModel>
@@ -15,6 +17,8 @@
 #include <QTableView>
 //#include <QSqlTableModel>
 #include <QTabWidget>
+#include <QImage>
+#include <QPixmap>
 #include "Downloader.h"
 
 int main(int argc, char* argv[])
@@ -46,6 +50,19 @@ int main(int argc, char* argv[])
     {
         textContent = new QTextEdit(mainWidget);
         textContent->setLineWrapMode(QTextEdit::NoWrap);
+    }
+    
+    auto image = new QLabel(mainWidget);
+    {
+        constexpr int rows = 2;
+        constexpr int cols = 2;
+        constexpr int scale = 2;
+        cv::Mat src(rows, cols, CV_8UC3);
+        src.at<char>(0, 0) = 64;
+        cv::Mat dst(scale*rows, scale*cols, CV_8UC3);
+        cv::resize(src, dst, cv::Size(scale*rows, scale*cols));
+        QImage img(dst.data, dst.cols, dst.rows, dst.step, QImage::Format_RGB888);
+        image->->setPixmap(QPixmap::fromImage(img));
     }
 
 #if 0
@@ -86,8 +103,8 @@ int main(int argc, char* argv[])
     }
     
     {
-        std::vector<QString> kTitles = {"Path", "Downloader", "SQL"};
-        std::vector<int> kNumOfCols = {2, 1, 1};
+        std::vector<QString> kTitles = {"Path", "Downloader", "SQL", "OpenCV"};
+        std::vector<int> kNumOfCols = {2, 1, 1, 1};
         std::vector<std::vector<QWidget*>> itemTable =
         {
             {
@@ -107,6 +124,9 @@ int main(int argc, char* argv[])
 #else
                 nullptr,
 #endif
+            },
+            {
+                image,
             },
         };
     
