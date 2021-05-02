@@ -62,7 +62,7 @@ int main(int argc, char* argv[])
         cv::Mat dst(scale*rows, scale*cols, CV_8UC3);
         cv::resize(src, dst, cv::Size(scale*rows, scale*cols));
         QImage img(dst.data, dst.cols, dst.rows, dst.step, QImage::Format_RGB888);
-        image->->setPixmap(QPixmap::fromImage(img));
+        image->setPixmap(QPixmap::fromImage(img));
     }
 
 #if 0

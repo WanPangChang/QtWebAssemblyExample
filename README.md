@@ -12,6 +12,6 @@ docker pull wanpangchang/qt-webassembly-boost-opencv
 # Step 3
 cd $HOME/QtWebAssemblyExample/WebTest
 docker run --rm -v $HOME/QtWebAssemblyExample/WebTest:/src/ wanpangchang/qt-webassembly-boost-opencv qmake
-docker run --rm -v $HOME/QtWebAssemblyExample/WebTest:/src/ wanpangchang/qt-webassembly-boost-opencv make -j24
+docker run --rm -v $HOME/QtWebAssemblyExample/WebTest:/src/ wanpangchang/qt-webassembly-boost-opencv make -j4
 docker run --rm -p 8000:8000 -v $HOME/QtWebAssemblyExample/WebTest:/src/ wanpangchang/qt-webassembly-boost-opencv python3 -m http.server
 ```
