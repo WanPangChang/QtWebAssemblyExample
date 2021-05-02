@@ -14,4 +14,4 @@ HEADERS += \
 INCLUDEPATH += \
     /emsdk_portable/sdk/system/include
 
-LIBS += -L/opencv/static_wasm/lib/ -lopencv_core -lopencv_imgproc
+LIBS += -L/opencv/static_wasm/lib/ -lopencv_imgproc -lopencv_core
