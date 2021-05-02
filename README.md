@@ -15,3 +15,8 @@ docker run --rm -v $HOME/QtWebAssemblyExample/WebTest:/src/ wanpangchang/qt-weba
 docker run --rm -v $HOME/QtWebAssemblyExample/WebTest:/src/ wanpangchang/qt-webassembly-boost-opencv make -j4
 docker run --rm -p 8000:8000 -v $HOME/QtWebAssemblyExample/WebTest:/src/ wanpangchang/qt-webassembly-boost-opencv python3 -m http.server
 ```
+
+# Reference
+1. https://github.com/KnowledgePending/OpenCV-Static-WASM-Docker
+2. https://github.com/Zebreus/qt-webassembly-docker
+3. https://github.com/Zebreus/qt-webassembly-boost-docker
