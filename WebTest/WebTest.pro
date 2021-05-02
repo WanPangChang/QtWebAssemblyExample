@@ -11,4 +11,7 @@ SOURCES += \
 HEADERS += \
     Downloader.h
 
-INCLUDEPATH += /emsdk_portable/sdk/system/include
+INCLUDEPATH += \
+    /emsdk_portable/sdk/system/include
+
+LIBS += -L/opencv/static_wasm/lib/ -lopencv_core -lopencv_imgproc
